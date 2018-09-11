@@ -1,0 +1,6 @@
+export(SLHV)
+exportClasses(SLHV)
+exportMethods(run)
+import(SimInf)
+import(methods)
+useDynLib(SLHV, .registration=TRUE)
