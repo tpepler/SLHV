@@ -81,7 +81,12 @@ double trFun1( /* Transition from S to L */
     const double *gdata,
     double t)
 {
-    return gdata[UPSILON]*ldata[PHI]*u[S]/(u[S]+u[L]+u[H]+u[V]);
+	const int n = u[S] + u[L] + u[H] + u[V];
+	double outval = 0;
+
+	if(n > 0.0)
+		outval = gdata[UPSILON]*ldata[PHI]*u[S]/n;
+    return outval;
 }
 
 double trFun2( /* Transition from L to H */
